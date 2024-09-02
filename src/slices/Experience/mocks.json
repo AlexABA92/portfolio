@@ -1,0 +1,86 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "tropical",
+				"type": "Text"
+			},
+			"title": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"time_period",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "his",
+									"type": "Text"
+								}
+							],
+							[
+								"institution",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "finger",
+									"type": "Text"
+								}
+							],
+							[
+								"descripton",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Elit aute est est duis irure dolor qui nulla quis nulla officia. Fugiat exercitation consectetur qui elit non labore voluptate veniam qui veniam."
+											}
+										}
+									]
+								}
+							],
+							[
+								"title",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "breath",
+									"type": "Text"
+								}
+							],
+							[
+								"sertificate",
+								{
+									"__TYPE__": "ImageContent",
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1560762484-813fc97650a0",
+										"width": 3344,
+										"height": 2509
+									},
+									"url": "https://images.unsplash.com/photo-1560762484-813fc97650a0",
+									"width": 3344,
+									"height": 2509,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"thumbnails": {}
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

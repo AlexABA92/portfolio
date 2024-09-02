@@ -1,0 +1,97 @@
+{
+  "format": "custom",
+  "id": "setings",
+  "label": "Settings",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "name": {
+        "type": "Text",
+        "config": {
+          "label": "Name",
+          "placeholder": ""
+        }
+      },
+      "nav_item": {
+        "type": "Group",
+        "config": {
+          "label": "Nav item",
+          "repeat": true,
+          "fields": {
+            "linck": {
+              "type": "Link",
+              "config": {
+                "label": "linck",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "lable": {
+              "type": "Text",
+              "config": {
+                "label": "lable",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "cti_linck": {
+        "type": "Link",
+        "config": {
+          "label": "CTI Linck",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "cti_label": {
+        "type": "Text",
+        "config": {
+          "label": "CTI LABEL ",
+          "placeholder": ""
+        }
+      },
+      "github_linck": {
+        "type": "Link",
+        "config": {
+          "label": "GitHub Linck",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "linkedin_link": {
+        "type": "Link",
+        "config": {
+          "label": "Linkedin Link",
+          "placeholder": "",
+          "select": null
+        }
+      }
+    },
+    "Seo and Metadata": {
+      "meta_data": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Data",
+          "placeholder": ""
+        }
+      },
+      "meta_description": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Description",
+          "placeholder": ""
+        }
+      },
+      "og_image": {
+        "type": "Image",
+        "config": {
+          "label": "OG Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}

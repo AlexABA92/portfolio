@@ -1,0 +1,40 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "dear",
+				"type": "Text"
+			},
+			"tachItem": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"tachname",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "final",
+									"type": "Text"
+								}
+							],
+							[
+								"tachcolor",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "#5767a3",
+									"type": "Color"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
