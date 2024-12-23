@@ -1,8 +1,8 @@
 {
-  "id": "content_index",
+  "id": "projects",
   "type": "SharedSlice",
-  "name": "ContentIndex",
-  "description": "ContentIndex",
+  "name": "Projects",
+  "description": "Projects",
   "variations": [
     {
       "id": "default",
@@ -17,17 +17,6 @@
           "config": {
             "label": "Heading",
             "placeholder": ""
-          }
-        },
-        "content_type": {
-          "type": "Select",
-          "config": {
-            "label": "Content Type",
-            "placeholder": "",
-            "options": [
-              "Blog",
-              "Projects"
-            ]
           }
         },
         "description": {
@@ -46,10 +35,10 @@
             "placeholder": ""
           }
         },
-        "follback_item_image": {
+        "hover_image": {
           "type": "Image",
           "config": {
-            "label": "Follback item Image",
+            "label": "Hover Image",
             "constraint": {},
             "thumbnails": []
           }

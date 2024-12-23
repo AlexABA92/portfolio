@@ -4,26 +4,20 @@ import Heading from '@/app/components/Heading'
 import { createClient } from '@/prismicio'
 import { Content, isFilled } from '@prismicio/client'
 import { PrismicRichText, SliceComponentProps } from '@prismicio/react'
-import { div } from 'three/webgpu'
 
 /**
- * Props for `ContentIndex`.
+ * Props for `Projects`.
  */
-export type ContentIndexProps = SliceComponentProps<Content.ContentIndexSlice>
+export type ProjectsProps = SliceComponentProps<Content.ProjectsSlice>
 
 /**
- * Component for "ContentIndex" Slices.
+ * Component for "Projects" Slices.
  */
-const ContentIndex = async ({
-	slice,
-}: ContentIndexProps): Promise<JSX.Element> => {
+
+const Projects = async ({ slice }: ProjectsProps): Promise<JSX.Element> => {
 	const client = createClient()
-	const blogPosts = await client.getAllByType('blog_post')
-	const projects = await client.getAllByType('project')
+	const projectPost = await client.getAllByType('project_post')
 
-	const contentType = slice.primary.content_type || 'Blog'
-
-	const items = contentType === 'Blog' ? blogPosts : projects
 	return (
 		<Bounded
 			data-slice-type={slice.slice_type}
@@ -38,13 +32,12 @@ const ContentIndex = async ({
 				</div>
 			)}
 			<ContentList
-				items={items}
-				contentType={contentType}
+				items={projectPost}
 				viewMoreText={slice.primary.view_mode_text}
-				follbackItemImage={slice.primary.follback_item_image}
-			></ContentList>
+				fallbackItemImage={slice.primary.hover_image}
+			/>
 		</Bounded>
 	)
 }
 
-export default ContentIndex
+export default Projects

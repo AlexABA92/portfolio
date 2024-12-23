@@ -17,10 +17,10 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "experience": {
+            "projects": {
               "type": "SharedSlice"
             },
-            "content_index": {
+            "experience": {
               "type": "SharedSlice"
             },
             "tech_list": {

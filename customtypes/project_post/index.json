@@ -1,11 +1,17 @@
 {
   "format": "page",
-  "id": "project",
-  "label": "Project ",
+  "id": "project_post",
+  "label": "Project Post",
   "repeatable": true,
   "status": true,
   "json": {
     "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
       "title": {
         "type": "Text",
         "config": {
@@ -13,11 +19,21 @@
           "placeholder": ""
         }
       },
-      "uid": {
+      "githubprojectlink": {
+        "type": "Link",
         "config": {
-          "label": "UID"
-        },
-        "type": "UID"
+          "label": "GithubProjectLink",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "deploy_project_linck": {
+        "type": "Link",
+        "config": {
+          "label": "Deploy project Linck",
+          "placeholder": "",
+          "select": null
+        }
       },
       "date": {
         "type": "Date",
@@ -42,7 +58,7 @@
             "image_block": {
               "type": "SharedSlice"
             },
-            "text_fild": {
+            "text_block": {
               "type": "SharedSlice"
             }
           }

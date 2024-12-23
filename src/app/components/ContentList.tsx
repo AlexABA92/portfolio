@@ -8,22 +8,21 @@ import { MdArrowOutward } from 'react-icons/md'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 type ContentListProps = {
-	items: Content.BlogPostDocument[] | Content.ProjectDocument[]
-	contentType: Content.ContentIndexSlice['primary']['content_type']
-	follbackItemImage: Content.ContentIndexSlice['primary']['follback_item_image']
-	viewMoreText: Content.ContentIndexSlice['primary']['view_mode_text']
+	items: Content.ProjectPostDocument[]
+
+	fallbackItemImage: Content.ProjectsSlice['primary']['hover_image']
+	viewMoreText: Content.ProjectsSlice['primary']['view_mode_text']
 }
 
 const ContentList = ({
 	items,
-	contentType,
-	follbackItemImage,
+	fallbackItemImage,
 	viewMoreText = 'Read More',
 }: ContentListProps) => {
 	const [currentItem, setCurrentItem] = useState<null | number>(null)
 	const component = useRef(null)
 	const revelRef = useRef(null)
-	const urlPrefix = contentType === 'Blog' ? '/blog' : '/projects'
+	const urlPrefix = '/projects'
 	const itemsRef = useRef<Array<HTMLLIElement | null>>([])
 	const lastMousePos = useRef({ x: 0, y: 0 })
 
@@ -88,7 +87,7 @@ const ContentList = ({
 	const contentImages = items.map(item => {
 		const image = isFilled.image(item.data.hover_image)
 			? item.data.hover_image
-			: follbackItemImage
+			: fallbackItemImage
 		return asImageSrc(image, {
 			fit: 'crop',
 			w: 220,
@@ -140,7 +139,7 @@ const ContentList = ({
 											{item.data.title}
 										</span>
 										<div className='flex gap-3 text-yellow-400 text-lg font-bold'>
-											{item.tags.map((tag, index) => (
+											{item.tags.map((tag: any, index: any) => (
 												<span key={index}>#{tag}</span>
 											))}
 										</div>
