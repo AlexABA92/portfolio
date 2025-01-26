@@ -3,7 +3,7 @@ import Bounded from '@/app/components/Bounded'
 import Button from '@/app/components/Button'
 import Heading from '@/app/components/Heading'
 import { Content } from '@prismicio/client'
-import { PrismicNextImage } from '@prismicio/next'
+
 import {
 	PrismicImage,
 	PrismicRichText,
@@ -30,12 +30,19 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
 				</Heading>
 				<div className='prose prose-xl prose-slate prose-invert col-start-1'>
 					<PrismicRichText field={slice.primary.descripton} />
+					<div className='flex row m-1'>
+						<Button
+							linkField={slice.primary.button_link}
+							label={slice.primary.button_text}
+							className='mx-2'
+						/>
+						<Button
+							linkField={slice.primary.button_link_docx}
+							label={slice.primary.button_text_docx}
+						/>
+					</div>
 				</div>
-				<Button
-					linkField={slice.primary.button_link}
-					label={slice.primary.button_text}
-					className='col-start-1'
-				/>
+
 				<Avatar
 					image={slice.primary.avatar}
 					className='row-start-1 max-w-sm md:col-start-2 md-row-end-3'

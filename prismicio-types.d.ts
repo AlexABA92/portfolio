@@ -70,9 +70,9 @@ export type MyhomepageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | EducationSlice
   | ProjectsSlice
   | ExperienceSlice
-  | TechListSlice
   | BiographySlice;
 
 /**
@@ -134,7 +134,10 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-type ProjectPostDocumentDataSlicesSlice = ImageBlockSlice | TextBlockSlice;
+type ProjectPostDocumentDataSlicesSlice =
+  | TechListSlice
+  | ImageBlockSlice
+  | TextBlockSlice;
 
 /**
  * Content for Project Post documents
@@ -347,7 +350,51 @@ interface SetingsDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  linkedin_link: prismic.LinkField /**
+  linkedin_link: prismic.LinkField;
+
+  /**
+   * TelegramTitle field in *Settings*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: setings.telegramtitle
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  telegramtitle: prismic.KeyTextField;
+
+  /**
+   * GoogleTitle field in *Settings*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: setings.googletitle
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  googletitle: prismic.KeyTextField;
+
+  /**
+   * LinkedinTitle field in *Settings*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: setings.linkedintitle
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  linkedintitle: prismic.KeyTextField;
+
+  /**
+   * LinkedinLink field in *Settings*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: setings.linkedinlink
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkedinlink: prismic.LinkField /**
    * Meta Data field in *Settings*
    *
    * - **Field Type**: Text
@@ -448,6 +495,26 @@ export interface BiographySliceDefaultPrimary {
   button_link: prismic.LinkField;
 
   /**
+   * Button text doxc  field in *Biography → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: biography.default.primary.button_text_docx
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text_docx: prismic.KeyTextField;
+
+  /**
+   * Button Link docx field in *Biography → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: biography.default.primary.button_link_docx
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link_docx: prismic.LinkField;
+
+  /**
    * Avatar field in *Biography → Default → Primary*
    *
    * - **Field Type**: Image
@@ -486,6 +553,126 @@ type BiographySliceVariation = BiographySliceDefault;
 export type BiographySlice = prismic.SharedSlice<
   "biography",
   BiographySliceVariation
+>;
+
+/**
+ * Item in *Education → Default → Primary → items*
+ */
+export interface EducationSliceDefaultPrimaryItemsItem {
+  /**
+   * specialization field in *Education → Default → Primary → items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: education.default.primary.items[].specialization
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  specialization: prismic.KeyTextField;
+
+  /**
+   * institytion field in *Education → Default → Primary → items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: education.default.primary.items[].institytion
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  institytion: prismic.KeyTextField;
+
+  /**
+   * Time period field in *Education → Default → Primary → items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: education.default.primary.items[].time_period
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  time_period: prismic.KeyTextField;
+
+  /**
+   * Descripton field in *Education → Default → Primary → items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: education.default.primary.items[].descripton
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  descripton: prismic.KeyTextField;
+
+  /**
+   * diplom field in *Education → Default → Primary → items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: education.default.primary.items[].diplom
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  diplom: prismic.ImageField<never>;
+
+  /**
+   * supplement field in *Education → Default → Primary → items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: education.default.primary.items[].supplement
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  supplement: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *Education → Default → Primary*
+ */
+export interface EducationSliceDefaultPrimary {
+  /**
+   * Title field in *Education → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: education.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * items field in *Education → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: education.default.primary.items[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  items: prismic.GroupField<Simplify<EducationSliceDefaultPrimaryItemsItem>>;
+}
+
+/**
+ * Default variation for Education Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EducationSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<EducationSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Education*
+ */
+type EducationSliceVariation = EducationSliceDefault;
+
+/**
+ * Education Shared Slice
+ *
+ * - **API ID**: `education`
+ * - **Description**: Education
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EducationSlice = prismic.SharedSlice<
+  "education",
+  EducationSliceVariation
 >;
 
 /**
@@ -979,6 +1166,11 @@ declare module "@prismicio/client" {
       BiographySliceDefaultPrimary,
       BiographySliceVariation,
       BiographySliceDefault,
+      EducationSlice,
+      EducationSliceDefaultPrimaryItemsItem,
+      EducationSliceDefaultPrimary,
+      EducationSliceVariation,
+      EducationSliceDefault,
       ExperienceSlice,
       ExperienceSliceDefaultPrimaryTitleItem,
       ExperienceSliceDefaultPrimary,

@@ -17,7 +17,7 @@ const Bounded = React.forwardRef<HTMLDivElement, BoundedProps>(
 				)}
 				{...restProps}
 			>
-				<div>{children} </div>
+				<div className='max-w-[100%]'>{children} </div>
 			</Comp>
 		)
 	}

@@ -36,11 +36,11 @@ export default async function Page({ params }: { params: Params }) {
 	}
 	return (
 		<Bounded as='article' className='flex justify-center'>
-			<div className='container rounded-2xl border-2  border-slate-800 bg-slate-900 px-8 md:px-8 md:py-20  xl:min-w-[1200px]'>
-				<Heading as='h1' size='lg'>
+			<div className='container rounded-2xl border-2  border-slate-800 bg-slate-900 md:px-8  md:py-20  xl:min-w-[1200px]'>
+				<Heading as='h1' size='md'>
 					{page.data.title}
 				</Heading>
-				<div className='flex gap-4 text-yellow-400 text-xl font-bold'>
+				<div className='flex gap-4 text-yellow-400 text-xl font-bold flex-wrap'>
 					{page.tags.map(tag => {
 						return <span key={tag}>#{tag}</span>
 					})}

@@ -1,6 +1,6 @@
 'use client'
 
-import { asLink, Content, KeyTextField } from '@prismicio/client'
+import { asLink, Content, isFilled, KeyTextField } from '@prismicio/client'
 import { PrismicNextLink } from '@prismicio/next'
 import clsx from 'clsx'
 import Link from 'next/link'
@@ -9,6 +9,11 @@ import React, { useState } from 'react'
 import { DiCodepen } from 'react-icons/di'
 import { MdClose, MdMenu } from 'react-icons/md'
 import Button from './Button'
+
+import DialogButton from './DialogButton'
+import { title } from 'process'
+import { FaLinkedin, FaTelegram } from 'react-icons/fa'
+import { FcGoogle } from 'react-icons/fc'
 
 const NavBar = ({ setting }: { setting: Content.SetingsDocument }) => {
 	const [open, setOpen] = useState(false)
@@ -68,11 +73,19 @@ const NavBar = ({ setting }: { setting: Content.SetingsDocument }) => {
 						</li>
 					</React.Fragment>
 				))}
-				<li>
-					<Button
+				<li
+					data-modal-target='myModal'
+					data-modal-show='myModal'
+					className='z-50'
+				>
+					<DialogButton
 						linkField={setting.data.cti_linck}
 						label={setting.data.cti_label}
 						className='ml-3'
+						tTitle={setting.data.telegramtitle}
+						mail={setting.data.googletitle}
+						linkedInT={setting.data.linkedintitle}
+						linkedInl={setting.data.linkedin_link}
 					/>
 				</li>
 			</div>
@@ -149,12 +162,39 @@ const NavBar = ({ setting }: { setting: Content.SetingsDocument }) => {
 							)}
 						</React.Fragment>
 					))}
-					<li>
-						<Button
-							linkField={setting.data.cti_linck}
-							label={setting.data.cti_label}
-							className='ml-3'
-						/>
+					<li className='flex flex-col justify-start w-[100%] mt-20'>
+						{isFilled.keyText(setting.data.telegramtitle) && (
+							<div className='flex flex-row items-center ms-5'>
+								<FaTelegram color='#187d97' className='me-5' size={32} />
+								<Link
+									href={'https:t.me/' + setting.data.telegramtitle}
+									className='font-bold text-xl text-slate-700'
+								>
+									@{setting.data.telegramtitle}
+								</Link>
+							</div>
+						)}
+						{isFilled.keyText(setting.data.googletitle) && (
+							<div className='flex flex-row items-center ms-5 mt-3'>
+								<FcGoogle className='me-5' size={32} />
+								<Link href={'mailto:' + setting.data.googletitle}>
+									<span className='font-bold text-xl text-slate-700'>
+										{setting.data.googletitle}
+									</span>
+								</Link>
+							</div>
+						)}
+						{isFilled.link(setting.data.linkedin_link) && (
+							<PrismicNextLink
+								field={setting.data.linkedin_link}
+								className='flex flex-row items-center ms-5 mt-3'
+							>
+								<FaLinkedin color='#144ec2' size={32} className='me-5' />
+								<span className='font-bold text-xl text-slate-700'>
+									{setting.data.linkedintitle}
+								</span>
+							</PrismicNextLink>
+						)}
 					</li>
 				</div>
 				<DesktopMenu setting={setting} pathname={pathName} />

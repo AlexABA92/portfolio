@@ -1,0 +1,79 @@
+{
+  "id": "education",
+  "type": "SharedSlice",
+  "name": "Education",
+  "description": "Education",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "items": {
+          "type": "Group",
+          "config": {
+            "label": "items",
+            "repeat": true,
+            "fields": {
+              "specialization": {
+                "type": "Text",
+                "config": {
+                  "label": "specialization",
+                  "placeholder": ""
+                }
+              },
+              "institytion": {
+                "type": "Text",
+                "config": {
+                  "label": "institytion",
+                  "placeholder": ""
+                }
+              },
+              "time_period": {
+                "type": "Text",
+                "config": {
+                  "label": "Time period",
+                  "placeholder": ""
+                }
+              },
+              "descripton": {
+                "type": "Text",
+                "config": {
+                  "label": "Descripton",
+                  "placeholder": ""
+                }
+              },
+              "diplom": {
+                "type": "Image",
+                "config": {
+                  "label": "diplom",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "supplement": {
+                "type": "Image",
+                "config": {
+                  "label": "supplement",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

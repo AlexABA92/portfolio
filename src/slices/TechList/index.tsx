@@ -60,7 +60,7 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
 			ref={component}
 		>
 			<Bounded as='div'>
-				<Heading size='xl' className='md-8' as='h2'>
+				<Heading size='md' className='md-3' as='h2'>
 					{slice.primary.heading}
 				</Heading>
 			</Bounded>
@@ -75,14 +75,14 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
 						{Array.from({ length: 15 }, (_, index) => (
 							<React.Fragment key={index}>
 								<span
-									className='tech-item text-8xl font-extrabold uppercase tracking-tighter'
+									className='tech-item md:text-8xl text-6xl font-extrabold uppercase tracking-tighter'
 									style={{
 										color: index === 7 && techcolor ? techcolor : 'inherit',
 									}}
 								>
 									{techname}
 								</span>
-								<span className='text-3xl '>
+								<span className=' text-3xl  '>
 									<MdCircle />
 								</span>
 							</React.Fragment>

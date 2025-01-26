@@ -43,6 +43,21 @@
             "select": null
           }
         },
+        "button_text_docx": {
+          "type": "Text",
+          "config": {
+            "label": "Button text doxc ",
+            "placeholder": ""
+          }
+        },
+        "button_link_docx": {
+          "type": "Link",
+          "config": {
+            "label": "Button Link docx",
+            "placeholder": "",
+            "select": null
+          }
+        },
         "avatar": {
           "type": "Image",
           "config": {

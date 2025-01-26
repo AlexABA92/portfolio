@@ -21,19 +21,22 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
 			<Heading as='h1' size='xl' className='col-start-1 md:flex-row'>
 				{slice.primary.heading}
 			</Heading>
-			<div className='w-[50%] md:w-[100%]'>
+			<div>
+				<div className='my-3 '>
+					<p className='prose prose-xl prose-slate prose-invert  mx-6'>
+						For this moment I don`t have commercial experience. But you can look
+						to my Pet-rejects.{' '}
+					</p>
+				</div>
 				{slice.primary.title.map(({ title, time_period }, index) => (
 					<div
 						key={index}
 						className={clsx('flex', index % 2 !== 0 && 'flex-row-reverse')}
 					>
-						<div className=''>{title}</div>
-						<div>11111111111</div>
-						<div>2222222222</div>
+						<div>{title}</div>
 					</div>
 				))}
 			</div>
-			<div className='md:w-[100%] w-[50%]'>Picc</div>
 		</Bounded>
 	)
 }

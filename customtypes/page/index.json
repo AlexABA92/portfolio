@@ -17,13 +17,13 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "education": {
+              "type": "SharedSlice"
+            },
             "projects": {
               "type": "SharedSlice"
             },
             "experience": {
-              "type": "SharedSlice"
-            },
-            "tech_list": {
               "type": "SharedSlice"
             },
             "biography": {

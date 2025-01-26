@@ -62,7 +62,7 @@ export default function Avatar({ image, className }: AvatarProps) {
 			<div className='avatar aspect-square overflow-hidden rounded-3xl border-spacing-2 border-slate-700 opacity-0'>
 				<PrismicNextImage
 					field={image}
-					className='avatar-image  '
+					className='avatar-image '
 					imgixParams={{ q: 100 }}
 				/>
 				<div className='highlight absolute inset-0 hidden w-full scale-110 bg-gradient-to-tr from-transparent via-yellow-50 to-transparent opacity-0 md:block'></div>

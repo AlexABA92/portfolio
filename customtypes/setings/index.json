@@ -67,6 +67,35 @@
           "placeholder": "",
           "select": null
         }
+      },
+      "telegramtitle": {
+        "type": "Text",
+        "config": {
+          "label": "TelegramTitle",
+          "placeholder": ""
+        }
+      },
+      "googletitle": {
+        "type": "Text",
+        "config": {
+          "label": "GoogleTitle",
+          "placeholder": ""
+        }
+      },
+      "linkedintitle": {
+        "type": "Text",
+        "config": {
+          "label": "LinkedinTitle",
+          "placeholder": ""
+        }
+      },
+      "linkedinlink": {
+        "type": "Link",
+        "config": {
+          "label": "LinkedinLink",
+          "placeholder": "",
+          "select": null
+        }
       }
     },
     "Seo and Metadata": {
