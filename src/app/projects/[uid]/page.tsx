@@ -58,7 +58,7 @@ export default async function Page({ params }: { params: Params }) {
 									fontSize='2.25rem'
 									className='me-5'
 								/>
-								GitHyb Project linck
+								GitHyb Project link
 							</PrismicNextLink>
 						</div>
 					)}
